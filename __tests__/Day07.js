@@ -1,4 +1,4 @@
-const frisby = require("frisby")
+const frisby = require("frisby");
 
 const API_KEY = "DEMO_KEY";
 const COUNT = 10;

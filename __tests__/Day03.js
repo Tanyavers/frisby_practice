@@ -1,6 +1,6 @@
 const frisby = require("frisby");
 
-const BASE_URL = "https://postman-echo.com"
+const BASE_URL = "https://postman-echo.com";
 
 it("Status code is 200", function () {
   return frisby.post(`${BASE_URL}/post`)
