@@ -13,3 +13,7 @@ jobs:
        run: npm i
      - name: Start frisby test
        run: npm run test
+       env:
+        POSTMAN_SECRET_KEY: ${{ secrets.POSTMAN_SECRET_KEY }}
+        POSTMAN_WORKSPACE_ID: ${{ secrets.POSTMAN_WORKSPACE_ID }}
+        POSTMAN_GITHUB_AUTH_TOKEN: ${{ secrets.POSTMAN_GITHUB_AUTH_TOKEN }}
