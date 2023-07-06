@@ -1,0 +1,15 @@
+name: Frisby tests
+on: 
+ push:
+   branches:
+     - master
+jobs:
+ Frisby-Test:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout GitCode
+       uses: actions/checkout@v3
+     - name: Install deps
+       run: npm i
+     - name: Start frisby test
+       run: npm run test

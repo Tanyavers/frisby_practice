@@ -1,6 +1,5 @@
 const frisby = require("frisby");
 
-const POSTMAN_API_KEY = "PMAK-649868198a69060031b9d505-80326b37dea6ef26416017edab34358c38";
 const COLLECTIONU_UID = "23667037-89008f41-1848-40cb-9003-827818a390b7";
 const BASE_URL = "https://api.getpostman.com/collections";
 
@@ -8,7 +7,7 @@ it("Submit", async () => {
     return frisby.setup({
             request: {
                 headers: {
-                    "x-api-key": POSTMAN_API_KEY,
+                    "x-api-key": process.env.POSTMAN_SECRET_KEY,
                 },
             },
         })

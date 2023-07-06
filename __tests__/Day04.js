@@ -2,14 +2,14 @@ const frisby = require("frisby");
 
 frisby.globalSetup({
     request: {
-        headers: {"x-api-key": "PMAK-649868198a69060031b9d505-80326b37dea6ef26416017edab34358c38"}
+        headers: {"x-api-key": process.env.POSTMAN_SECRET_KEY}
     }
 })
 
 it("Add authorized key to header and get status 200", function () {
   return frisby.setup({
         request: {
-            headers: {"x-api-key": "PMAK-649868198a69060031b9d505-80326b37dea6ef26416017edab34358c38"}
+            headers: {"x-api-key": process.env.POSTMAN_SECRET_KEY}
         }
     })
     .get("https://api.getpostman.com/collections")
@@ -18,7 +18,7 @@ it("Add authorized key to header and get status 200", function () {
 
 it("Add authorized key to query parameter and get status 200", function () {
     return frisby.setup({request: {headers: {"x-api-key": ""}}})
-        .get("https://api.getpostman.com/collections?apikey=PMAK-649868198a69060031b9d505-80326b37dea6ef26416017edab34358c38")
+        .get(`https://api.getpostman.com/collections?apikey=${process.env.POSTMAN_SECRET_KEY}`)
         .expect("status", 200);
 });
 
